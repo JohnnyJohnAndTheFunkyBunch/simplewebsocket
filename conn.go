@@ -62,7 +62,7 @@ func (conn *Conn) Close() {
 
 func heartbeatLoop(s *Server, conn *Conn) {
 	for {
-		time.Sleep(10000 * time.Millisecond)
+		time.Sleep(2000 * time.Millisecond)
 		conn.SendPing()
 		conn.pingTime <- time.Now() // for the receiver
 	}
